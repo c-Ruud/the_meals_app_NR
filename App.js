@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 import AppLoading from 'expo-app-loading';
 import * as Font from 'expo-font';
 import { enableScreens } from 'react-native-screens';
 
-import MealsNavigator from './navigation/MealsNavigator';
+import MainNavigator from './navigation/MealsNavigator';
 
 enableScreens();
 
@@ -29,7 +30,11 @@ export default function App() {
   }
 
   // return <MealsNavigator />;
-  return <MealsNavigator />;
+  return (
+    <NavigationContainer>
+      <MainNavigator />
+    </NavigationContainer>
+  );
 }
 
 const styles = StyleSheet.create({
